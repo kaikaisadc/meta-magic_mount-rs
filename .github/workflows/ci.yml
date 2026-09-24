@@ -62,7 +62,7 @@ jobs:
       - name: Setup Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: nightly
+          toolchain: nightly-2026-08-22
           targets: ${{ matrix.rust-target }}
           components: rust-src, rustc-codegen-cranelift-preview
       - name: Install pnpm

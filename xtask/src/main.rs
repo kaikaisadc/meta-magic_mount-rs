@@ -13,7 +13,7 @@ use anyhow::Result;
 use clap::{Parser, Subcommand, ValueEnum};
 use fs_extra::{dir, file};
 use serde::{Deserialize, Serialize};
-use zip::{CompressionMethod, write::FileOptions};
+use zip::{write::FileOptions, CompressionMethod};
 
 use sha2::{Digest, Sha256};
 use std::io::{BufReader, Read};
@@ -443,7 +443,7 @@ fn cargo_ndk(target: Targets) -> Command {
     let mut command = Command::new("cargo");
     command
         .args([
-            "+nightly",
+            "+nightly-2026-08-22",
             "ndk",
             "--platform",
             if matches!(target, Targets::Arm64 | Targets::X86_64) {
